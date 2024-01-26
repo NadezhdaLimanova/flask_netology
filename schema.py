@@ -1,0 +1,44 @@
+from abc import ABC
+import pydantic
+from pydantic import BaseModel, field_validator
+from typing import Optional
+import re
+
+
+class AbstractClass(pydantic.BaseModel, ABC):
+    name: str
+    password: str
+
+
+class Login(AbstractClass):
+    pass
+
+
+class CreateUser(AbstractClass):
+    email: str
+    @field_validator("password")
+    @classmethod
+    def validate_password(cls, value: str):
+        password_length = len(value)
+        if password_length < 8 or password_length > 16:
+            raise ValueError("The password must be between 8 and 16 characters long")
+        return value
+
+    @field_validator("email")
+    @classmethod
+    def validate_email(cls, value: str):
+        if not bool(re.fullmatch(r'[\w.-]+@[\w-]+\.[\w.]+', value)):
+            raise ValueError("Email is invalid")
+        return value
+
+
+class CreateAdv(AbstractClass):
+    author: str
+    title: str
+    description: Optional[str]
+
+
+
+# class UpdateAdv(AbstractAdv):
+#     title: Optional[str]
+#     description: Optional[str]

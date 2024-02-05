@@ -1,5 +1,4 @@
 import datetime
-import atexit
 from sqlalchemy import UUID, create_engine, DateTime, String, func, ForeignKey
 from sqlalchemy.orm import sessionmaker, DeclarativeBase, mapped_column, Mapped, relationship
 import uuid
@@ -88,4 +87,3 @@ MODEL = User | Token | Advertisement
 
 Base.metadata.drop_all(bind=engine)
 Base.metadata.create_all(bind=engine)
-atexit.register(engine.dispose)

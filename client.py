@@ -6,27 +6,27 @@ response = requests.post(
     json={
         "name": "J3",
         "email": "jh@exame1.com",
-        "password": "sesguhjw",
+        "password": "sejggggj",
     },
 )
 print(response.status_code)
 print(response.text)
-#
-# with open('token.txt', 'r') as file:
-#     token = file.read().strip()
-# headers = {'Authorization': token}
+# #
+with open('token.txt', 'r') as file:
+    token = file.read().strip()
+headers = {'Authorization': token}
 
 # response = requests.post(
 #     "http://127.0.0.1:5000/login",
 #     json={
 #         "name": "J3",
 #         "email": "jh@exame1.com",
-#         "password": "sesguhjw",
+#         "password": "sejggggj",
 #     },
 # )
 # print(response.status_code)
 # print(response.text)
-
+#
 # response = requests.delete(
 #     "http://127.0.0.1:5000/user",
 # headers=headers
@@ -46,7 +46,7 @@ print(response.text)
 # print(response.text)
 
 # response = requests.get(
-#     "http://127.0.0.1:5000/user/12",
+#     "http://127.0.0.1:5000/user",
 #     headers=headers
 # )
 # print(response.status_code)
@@ -63,7 +63,7 @@ print(response.text)
 # )
 # print(response.status_code)
 # print(response.text)
-#
+# #
 # response = requests.get(
 #     "http://127.0.0.1:5000/adv/10",
 #     headers=headers
@@ -71,7 +71,7 @@ print(response.text)
 #
 # print(response.status_code)
 # print(response.text)
-#
+# #
 # response = requests.delete(
 #     "http://127.0.0.1:5000/adv/1",
 #     headers=headers

@@ -1,11 +1,10 @@
 from abc import ABC
-import pydantic
 from pydantic import BaseModel, field_validator
 from typing import Optional
 import re
 
 
-class AbstractClass(pydantic.BaseModel, ABC):
+class AbstractClass(BaseModel, ABC):
     name: str
     password: str
 
@@ -32,13 +31,21 @@ class CreateUser(AbstractClass):
         return value
 
 
-class CreateAdv(AbstractClass):
+class PatchUser(CreateUser):
+    name: Optional[str] = None
+    password: Optional[str] = None
+    email: Optional[str] = None
+
+
+class CreateAdv(BaseModel):
     author: str
     title: str
     description: Optional[str]
 
 
+class PatchAdv(BaseModel):
+    author: str
+    title: Optional[str] = None
+    description: Optional[str] = None
 
-# class UpdateAdv(AbstractAdv):
-#     title: Optional[str]
-#     description: Optional[str]
+

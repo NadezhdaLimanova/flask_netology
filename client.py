@@ -1,66 +1,83 @@
 import requests
-
+#
+#
 response = requests.post(
     "http://127.0.0.1:5000/user",
     json={
-        "name": "John Doe1",
-        "email": "john@doeexample1.com",
-        "password": "securepassword1",
+        "name": "J3",
+        "email": "jh@exame1.com",
+        "password": "sesguhjw",
     },
 )
 print(response.status_code)
 print(response.text)
-
-
-# response = requests.get(
-#     "http://127.0.0.1:5000/adv/1",
-# )
 #
+# with open('token.txt', 'r') as file:
+#     token = file.read().strip()
+# headers = {'Authorization': token}
+
+# response = requests.post(
+#     "http://127.0.0.1:5000/login",
+#     json={
+#         "name": "J3",
+#         "email": "jh@exame1.com",
+#         "password": "sesguhjw",
+#     },
+# )
 # print(response.status_code)
 # print(response.text)
 
-# response = requests.get(
-#     "http://127.0.0.1:5000/adv/10",
+# response = requests.delete(
+#     "http://127.0.0.1:5000/user",
+# headers=headers
 # )
-#
 # print(response.status_code)
 # print(response.text)
 #
 # response = requests.post(
 #     "http://127.0.0.1:5000/adv",
 #     json={
-#         "header": "adv_1",
-#         "text": "text1",
-#         "author": "author1",
-#         "password": "123456",
-#     },
+#         "author": "J2",
+#         "title": "jfhjfjfooj",
+#         "description": "sjjjyi",
+#     }, headers=headers,
 # )
-#
 # print(response.status_code)
 # print(response.text)
-#
+
+# response = requests.get(
+#     "http://127.0.0.1:5000/user/12",
+#     headers=headers
+# )
+# print(response.status_code)
+# print(response.text)
+
 # response = requests.patch(
-#     "http://127.0.0.1:5000/adv/2",
+#     "http://127.0.0.1:5000/adv/1",
 #     json={
-#         "text": "text23433",
+#         "title": "hsuths",
+#         "author": "J2",
+#
 #     },
+#     headers=headers,
 # )
-#
-# print(response.status_code)
-# print(response.text)
-#
-#
-# response = requests.delete(
-#     "http://127.0.0.1:5000/adv/2",)
-#
-#
 # print(response.status_code)
 # print(response.text)
 #
 # response = requests.get(
-#     "http://127.0.0.1:5000/adv/2",
+#     "http://127.0.0.1:5000/adv/10",
+#     headers=headers
 # )
 #
 # print(response.status_code)
 # print(response.text)
+#
+# response = requests.delete(
+#     "http://127.0.0.1:5000/adv/1",
+#     headers=headers
+# )
+# print(response.status_code)
+# print(response.text)
+
+
 
